@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 
 const Budget = () => {
-    const { budget, dispatch, expenses } = useContext(AppContext);
+    const { budget, dispatch, expenses,currency } = useContext(AppContext);
     //const [] = useState('');
     
     const totalExpenses = expenses.reduce((total, item) => {
@@ -10,7 +10,7 @@ const Budget = () => {
     }, 0);
     const handleSetBudget = (a) => {
         if(a > 20000) {
-            alert("The value cannot exceed remaining funds  £20000");
+            alert("The value cannot exceed remaining funds "+ currency[0] +"2000");
             //setCost("");
             return;
         }
@@ -29,7 +29,7 @@ const Budget = () => {
 
     return (
         <div className='alert alert-secondary'>
-            <span>Budget: £<input id="budget" type="number" value={budget} min="0" step="10" onChange={(event)=>handleSetBudget(event.target.value)}/></span>
+            <span>Budget: {currency[0]}<input id="budget" type="number" value={budget} min="0" step="10" onChange={(event)=>handleSetBudget(event.target.value)}/></span>
         </div>
 
         

@@ -19,7 +19,6 @@ const Currency = () => {
     return(
         <div className='alert alert-secondary'>
             <span>
-                <div>
 
                 <label>
 
@@ -38,9 +37,8 @@ const Currency = () => {
                 </select>
 
                 </label>
-
-                </div>
             </span>
+           
             
         </div>
     );
